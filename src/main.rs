@@ -28,7 +28,7 @@ enum Commands {
 
 fn main() -> Result<()> {
     let cli = Cli::parse();
-    let con = TodoDb::new()?;
+    let con = TodoDb::new(".todo.db".to_string())?;
     con.init()?;
 
     match cli.command {
